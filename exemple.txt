@@ -1,0 +1,19 @@
+| 🧱 Mot-clé      | 💡 Exemple concret                                                                |   |                                     |
+| --------------- | --------------------------------------------------------------------------------- | - | ----------------------------------- |
+| **FROM**        | `FROM node:20-alpine` – commence une image légère avec Node.js 20 préinstallé     |   |                                     |
+| **RUN**         | `RUN apt-get update && apt-get install -y git` – installe Git                     |   |                                     |
+| **CMD**         | `CMD ["npm", "start"]` – lance une app Node par défaut                            |   |                                     |
+| **ENTRYPOINT**  | `ENTRYPOINT ["docker-entrypoint.sh"]` – toujours exécuté, même avec des arguments |   |                                     |
+| **WORKDIR**     | `WORKDIR /usr/src/app` – positionne le dossier courant                            |   |                                     |
+| **COPY**        | `COPY . .` – copie tout le dossier local dans l'image                             |   |                                     |
+| **ADD**         | `ADD https://site.com/file.zip /src/` – télécharge et ajoute un fichier distant   |   |                                     |
+| **LABEL**       | `LABEL version="1.0" maintainer="zitoune@42.fr"` – info sur l’image               |   |                                     |
+| **ENV**         | `ENV PORT=3000` – crée une variable d’environnement                               |   |                                     |
+| **ARG**         | `ARG BUILD_VERSION=1.0` – accessible uniquement pendant le build                  |   |                                     |
+| **EXPOSE**      | `EXPOSE 8080` – indique que l'app écoute sur ce port                              |   |                                     |
+| **VOLUME**      | `VOLUME /data` – déclare un volume persistant                                     |   |                                     |
+| **USER**        | `USER node` – change d'utilisateur dans le conteneur                              |   |                                     |
+| **ONBUILD**     | `ONBUILD RUN npm install` – déclenche `npm install` dans l’image fille            |   |                                     |
+| **SHELL**       | `SHELL ["/bin/bash", "-c"]` – passe de `sh` à `bash` pour les commandes           |   |                                     |
+| **HEALTHCHECK** | \`HEALTHCHECK CMD curl -f [http://localhost](http://localhost)                    |   | exit 1\` – vérifie que l’app tourne |
+| **STOPSIGNAL**  | `STOPSIGNAL SIGINT` – change le signal d’arrêt par défaut                         |   |                                     |
