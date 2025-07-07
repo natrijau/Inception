@@ -1,0 +1,16 @@
+docker-compose down -v --rmi all --volumes
+: pou arreter les docker 
+
+docker-compose build
+docker-compose up -d
+
+: reconstruisez et redémarrez vos conteneurs Docker
+
+docker-compose ps  
+: voir les docker lancés
+
+docker-compose logs nginx
+docker-compose logs wordpress
+docker-compose logs mariadb
+
+:voir les logs des dockers

@@ -1,14 +1,22 @@
-# Utilise l'image officielle de Nginx comme image de base
-FROM nginx:latest
+FROM debian:bullseye-slim
 
-# Copie un fichier de configuration personnalisé dans le conteneur
-COPY nginx.conf /etc/nginx/nginx.conf
+# Installer MariaDB
+RUN apt-get update && apt-get install -y \
+    mariadb-server \
+    && rm -rf /var/lib/apt/lists/*
 
-# Copie les fichiers du site dans le dossier HTML par défaut de Nginx
-COPY ./html /usr/share/nginx/html
+# Créer les dossiers nécessaires
+RUN mkdir -p /run/mysqld && chown -R mysql:mysql /run/mysqld
 
-# Expose le port 80
-EXPOSE 80
+# Copier la configuration personnalisée (optionnel)
+COPY ./conf/50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
 
-# Commande de lancement (déjà incluse dans l’image nginx officielle)
-CMD ["nginx", "-g", "daemon off;"]
+# Copier le script d'initialisation
+COPY ./tools/setup_db.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/setup_db.sh
+
+
+EXPOSE 3306
+
+# Point d'entrée = script de setup puis lancement de mysqld
+ENTRYPOINT ["/usr/local/bin/setup_db.sh"]
