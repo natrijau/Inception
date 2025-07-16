@@ -1,4 +1,4 @@
-# 🏗️ Inception - Projet 42
+# Inception - Projet 42
 
 Ce projet a pour but de créer une infrastructure Docker sécurisée et modulaire en utilisant **Docker Compose**. L’objectif est de déployer un site WordPress fonctionnel, sécurisé avec HTTPS, et relié à une base de données **MariaDB**.
 
@@ -6,7 +6,7 @@ Ce projet a pour but de créer une infrastructure Docker sécurisée et modulair
 
 ---
 
-## 🔧 Utilisation du Makefile
+## Utilisation du Makefile
 
 Le fichier `Makefile` centralise toutes les commandes utiles :
 
@@ -22,7 +22,7 @@ Le fichier `Makefile` centralise toutes les commandes utiles :
 
 ---
 
-## 🌐 Accès au site WordPress
+## Accès au site WordPress
 
 Une fois les services lancés :
 
@@ -32,7 +32,7 @@ Une fois les services lancés :
 
 ---
 
-## 🐬 Accéder à MariaDB et consulter la base de données
+## Accéder à MariaDB et consulter la base de données
 
 ### 1. Lister les conteneurs actifs
 
