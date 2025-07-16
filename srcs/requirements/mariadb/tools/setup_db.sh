@@ -33,5 +33,6 @@ else
 fi
 
 echo "🚀 Lancement final de mysqld..."
+
 exec mysqld
 
