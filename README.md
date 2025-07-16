@@ -46,9 +46,9 @@ mysql -u root -p
 
 ```bash
 SHOW DATABASES;
-USE nom_de_la_base;
+USE wordpress;
 SHOW TABLES;
-SELECT * FROM table LIMIT 10;
+SELECT * FROM wp_comments LIMIT 10;
 ```
 
 Pour quitter MariaDB
