@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Verifie si wordpress est deja installé
 if !(wp core is-installed --allow-root); then
 	
 	wp core install --url=https://${DOMAIN_NAME} \
@@ -10,9 +11,9 @@ if !(wp core is-installed --allow-root); then
 					--allow-root --skip-email
 	
 	wp user create ${WP_USER} ${WP_USER_EMAIL} \
-	    			--user_pass=${WP_USER_PASSWORD} \
-	    			--role=author \
-	    			--allow-root
+					--user_pass=${WP_USER_PASSWORD} \
+					--role=author \
+					--allow-root
 fi
 
 exec /usr/sbin/php-fpm7.4 -F

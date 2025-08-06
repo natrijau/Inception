@@ -2,7 +2,7 @@
 
 do{
 	$mysqli = @new mysqli('mariadb', getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'), getenv('MYSQL_DATABASE'));
-    sleep(3);
+	sleep(3);
 }while ($mysqli->connect_errno);
 $mysqli->close();
 
