@@ -93,7 +93,7 @@ Le fichier `Makefile` centralise toutes les commandes utiles :
 | `make clean`     | Supprime conteneurs, volumes et orphelins + prune Docker. |
 
 ---
-. . .
+
 #### Accès au site WordPress
 
 Une fois les services lancés :
@@ -102,7 +102,7 @@ Une fois les services lancés :
 
 > ⚠️ Si vous utilisez un certificat auto-signé, acceptez l’exception de sécurité dans le navigateur.
 
-. . .
+
 
 #### Accéder à MariaDB et consulter la base de données
 
