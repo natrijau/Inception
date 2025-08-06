@@ -134,7 +134,6 @@ Pour sortir du conteneur
 ```bash
 exit
 ```
-...
 ---
 
 ## Ce que j'ai appris
