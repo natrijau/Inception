@@ -92,7 +92,8 @@ Le fichier `Makefile` centralise toutes les commandes utiles :
 | `make ps`        | Affiche les conteneurs en cours d’exécution. |
 | `make clean`     | Supprime conteneurs, volumes et orphelins + prune Docker. |
 
---
+---
+. . .
 #### Accès au site WordPress
 
 Une fois les services lancés :
@@ -101,6 +102,7 @@ Une fois les services lancés :
 
 > ⚠️ Si vous utilisez un certificat auto-signé, acceptez l’exception de sécurité dans le navigateur.
 
+. . .
 
 #### Accéder à MariaDB et consulter la base de données
 
@@ -111,7 +113,6 @@ docker ps
 docker exec -it mariadb bash
 mysql -u root -p
 ```
---
 
 ##### 2. Quelques commandes SQL utiles
 
@@ -133,7 +134,7 @@ Pour sortir du conteneur
 ```bash
 exit
 ```
---
+. . .
 ---
 
 ## Ce que j'ai appris
