@@ -9,10 +9,10 @@ Ce projet a pour but de créer une infrastructure Docker sécurisée et modulair
 1. [Description du projet](#description-du-projet)
 2. [Structure de l'infrastructure](#structure-de-linfrastructure)
 3. [Installation et utilisation](#installation-et-utilisation)
-4. [Structure du dépôt](#structure-du-dépôt)
-5. [Contraintes et bonnes pratiques](#contraintes-et-bonnes-pratiques)
+4. [Utilisation du Makefile](#Utilisation-du-Makefile)
+4. [Ce que j'ai appris](#Ce-que-jai-appris)
 6. [Ressources utiles](#ressources-utiles)
-
+Ce que j'ai appris
 ---
 
 ## Description du projet
@@ -93,9 +93,7 @@ Le fichier `Makefile` centralise toutes les commandes utiles :
 | `make ps`        | Affiche les conteneurs en cours d’exécution. |
 | `make clean`     | Supprime conteneurs, volumes et orphelins + prune Docker. |
 
----
-
-## Accès au site WordPress
+### Accès au site WordPress
 
 Une fois les services lancés :
 
@@ -103,11 +101,10 @@ Une fois les services lancés :
 
 > ⚠️ Si vous utilisez un certificat auto-signé, acceptez l’exception de sécurité dans le navigateur.
 
----
 
-## Accéder à MariaDB et consulter la base de données
+### Accéder à MariaDB et consulter la base de données
 
-### 1. Lister les conteneurs actifs
+#### 1. Lister les conteneurs actifs
 
 ```bash
 docker ps
@@ -115,7 +112,7 @@ docker exec -it mariadb bash
 mysql -u root -p
 ```
 
-### 1. Quelques commandes SQL utiles
+#### 2. Quelques commandes SQL utiles
 
 ```bash
 SHOW DATABASES;
@@ -135,6 +132,7 @@ Pour sortir du conteneur
 ```bash
 exit
 ```
+---
 
 ## Ce que j'ai appris
 
@@ -144,6 +142,8 @@ exit
 - Configurer un serveur sécurisé avec Nginx et certificats SSL  
 - Orchestrer un service web complet (WordPress + MariaDB)  
 - Automatiser avec un Makefile  
+
+---
 
 ### Ressources utiles
 
