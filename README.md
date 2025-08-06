@@ -12,7 +12,6 @@ Ce projet a pour but de créer une infrastructure Docker sécurisée et modulair
 4. [Utilisation du Makefile](#Utilisation-du-Makefile)
 4. [Ce que j'ai appris](#Ce-que-jai-appris)
 6. [Ressources utiles](#ressources-utiles)
-Ce que j'ai appris
 ---
 
 ## Description du projet
@@ -93,7 +92,7 @@ Le fichier `Makefile` centralise toutes les commandes utiles :
 | `make ps`        | Affiche les conteneurs en cours d’exécution. |
 | `make clean`     | Supprime conteneurs, volumes et orphelins + prune Docker. |
 
-### Accès au site WordPress
+#### Accès au site WordPress
 
 Une fois les services lancés :
 
@@ -102,9 +101,9 @@ Une fois les services lancés :
 > ⚠️ Si vous utilisez un certificat auto-signé, acceptez l’exception de sécurité dans le navigateur.
 
 
-### Accéder à MariaDB et consulter la base de données
+#### Accéder à MariaDB et consulter la base de données
 
-#### 1. Lister les conteneurs actifs
+##### 1. Lister les conteneurs actifs
 
 ```bash
 docker ps
@@ -112,7 +111,7 @@ docker exec -it mariadb bash
 mysql -u root -p
 ```
 
-#### 2. Quelques commandes SQL utiles
+##### 2. Quelques commandes SQL utiles
 
 ```bash
 SHOW DATABASES;
