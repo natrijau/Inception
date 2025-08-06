@@ -17,3 +17,59 @@
 | **SHELL**       | `SHELL ["/bin/bash", "-c"]` – passe de `sh` à `bash` pour les commandes           |   |                                     |
 | **HEALTHCHECK** | \`HEALTHCHECK CMD curl -f [http://localhost](http://localhost)                    |   | exit 1\` – vérifie que l’app tourne |
 | **STOPSIGNAL**  | `STOPSIGNAL SIGINT` – change le signal d’arrêt par défaut                         |   |                                     |
+
+
+Pour installer Docker Compose sur une machine Debian, tu peux suivre ces étapes :
+1. Mettre à jour le système
+
+Avant d'installer Docker Compose, il est recommandé de mettre à jour les paquets de ton système.
+
+sudo apt update
+sudo apt upgrade -y
+
+2. Installer Docker (si ce n'est pas déjà fait)
+
+Si Docker n'est pas encore installé sur ton système, tu peux l'installer en suivant ces étapes :
+
+sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+
+# Ajouter la clé officielle de Docker
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+
+# Ajouter le dépôt Docker stable
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+
+# Mettre à jour les dépôts
+sudo apt update
+
+# Installer Docker
+sudo apt install docker-ce -y
+
+# Vérifier l'installation de Docker
+sudo systemctl status docker
+
+3. Installer Docker Compose
+
+Ensuite, pour installer Docker Compose, tu peux suivre ces étapes :
+
+# Télécharger la dernière version de Docker Compose
+sudo curl -L "https://github.com/docker/compose/releases/download/$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq -r .tag_name)/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+# Appliquer les permissions d'exécution
+sudo chmod +x /usr/local/bin/docker-compose
+
+# Vérifier l'installation de Docker Compose
+docker-compose --version
+
+4. (Optionnel) Utiliser Docker Compose sans sudo
+
+Si tu veux utiliser Docker et Docker Compose sans avoir à ajouter sudo à chaque commande, ajoute ton utilisateur au groupe Docker :
+
+sudo usermod -aG docker $USER
+
+Puis, déconnecte-toi et reconnecte-toi ou redémarre ton système pour appliquer les modifications.
+
+Voilà, tu devrais maintenant avoir Docker Compose installé sur ton système Debian.
+
+
+ChatGPT can make mistakes. Check important info. See Cookie Preferences.
